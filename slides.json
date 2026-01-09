@@ -1,0 +1,121 @@
+{
+    "topic": "어텐션과 트랜스포머, 그리고 GPT",
+    "design_theme": {
+        "primary_color": "#667eea",
+        "secondary_color": "#764ba2",
+        "accent_color": "#f093fb",
+        "style": "glassmorphism"
+    },
+    "slides": [
+        {
+            "title": "어텐션 메커니즘의 탄생",
+            "content": [
+                "**어텐션(Attention)**: 마치 칵테일 파티에서 특정 대화에 집중하는 것처럼, 중요한 정보에 가중치를 부여하는 메커니즘",
+                "**기존 RNN/LSTM의 한계**: 긴 문장을 처리할 때 초반 정보를 '잊어버리는' 문제 - 마치 긴 전화번호를 외우기 어려운 것과 비슷",
+                "**Bahdanau Attention (2014)**: 기계 번역에서 첫 성공 - 번역할 때 원문의 어느 부분을 '주목'할지 자동으로 학습",
+                "**Query-Key-Value 구조**: 도서관에서 책 찾기와 유사 → Query(검색어), Key(색인), Value(실제 내용)",
+                "**성능 향상**: BLEU 스코어 34.8 → 37.0으로 획기적 개선"
+            ],
+            "image_prompt": "modern glassmorphism style, gradient background with purple and blue tones, semi-transparent frosted glass elements, subtle blur effects, attention mechanism diagram showing encoder-decoder architecture with Query-Key-Value mapping process using arrows and matrices, professional tech illustration, vibrant neon accents highlighting attention weights, clean minimalist design, soft shadows, depth layers"
+        },
+        {
+            "title": "트랜스포머: 패러다임의 전환",
+            "content": [
+                "**Attention is All You Need (2017)**: RNN을 완전히 버리고 순수 어텐션만으로 구성 - 마치 자동차에서 엔진을 전기모터로 완전히 교체한 것과 같은 혁명",
+                "**병렬 처리의 혁신**: 모든 단어를 동시에 처리 → 학습 속도 100배 향상 (GPU 활용 극대화)",
+                "**멀티-헤드 어텐션**: 8-16개의 '눈'으로 동시에 다른 관점에서 정보 파악 - 여러 각도에서 사진 찍는 것과 유사",
+                "**포지셔널 인코딩**: 단어 순서 정보를 사인/코사인 함수로 주입 (sin/cos 파형 활용)",
+                "**인코더-디코더 구조**: 각 6개 레이어 스택, 잔차 연결과 레이어 정규화로 안정적 학습"
+            ],
+            "image_prompt": "modern glassmorphism style, gradient background with purple and blue tones, semi-transparent frosted glass elements, subtle blur effects, complete transformer architecture diagram showing encoder and decoder stacks as block diagrams, multi-head attention, feed-forward networks, Add&Norm layers clearly distinguished, professional tech illustration, vibrant neon purple and pink accents, clean minimalist design, soft shadows, depth layers with 3D effect"
+        },
+        {
+            "title": "셀프 어텐션의 마법",
+            "content": [
+                "**셀프 어텐션**: 문장 내 모든 단어가 서로를 '바라보며' 관계 파악 - 마치 회의실에서 모든 사람이 서로를 주시하는 것과 같음",
+                "**스케일드 닷-프로덕트**: Attention(Q,K,V) = softmax(QK^T/√d_k)V - 수학적으로 우아한 해법",
+                "**계산 복잡도**: O(n²d) - 시퀀스 길이의 제곱에 비례하지만, 병렬 처리로 극복",
+                "**예시**: '은행'이라는 단어가 '강'과 함께 나오면 river bank, '돈'과 함께 나오면 financial bank로 자동 구분",
+                "**가중치 시각화**: 어텐션 맵을 보면 모델이 '무엇을 보고 있는지' 직관적으로 이해 가능"
+            ],
+            "image_prompt": "modern glassmorphism style, gradient background with purple and blue tones, semi-transparent frosted glass elements, subtle blur effects, self-attention computation process flowchart from input tokens to Q/K/V matrix generation, attention score calculation, softmax, weighted sum with mathematical formulas, professional tech illustration, vibrant neon accents on key computation steps, clean minimalist design, soft shadows, depth layers, arrows showing data flow"
+        },
+        {
+            "title": "GPT-1: 생성형 AI의 시작",
+            "content": [
+                "**GPT (Generative Pre-trained Transformer)**: 디코더 전용 아키텍처 - 인코더를 과감히 제거한 심플한 디자인",
+                "**비지도 사전학습**: 인터넷의 방대한 텍스트로 '세상 지식' 학습 → 특정 작업에 미세조정",
+                "**1.17억 파라미터**: 당시로서는 거대한 규모 (현재 기준으로는 '작은' 모델)",
+                "**자기회귀 언어 모델링**: P(x_t|x_1,...,x_{t-1}) - 이전 단어들을 보고 다음 단어 예측, 마치 이야기를 이어가는 것처럼",
+                "**Transfer Learning 입증**: 한 번 학습한 지식을 여러 작업에 재사용 가능"
+            ],
+            "image_prompt": "modern glassmorphism style, gradient background with purple and blue tones, semi-transparent frosted glass elements, subtle blur effects, GPT-1 model architecture diagram showing decoder-only transformer stack, masked self-attention layers, token embeddings and positional encoding input, output probability distribution generation process, professional tech illustration, vibrant neon purple accents, clean minimalist design, soft shadows, depth layers with glowing connections"
+        },
+        {
+            "title": "GPT-2: 스케일의 힘",
+            "content": [
+                "**15억 파라미터**: GPT-1 대비 10배 이상 증가 - '양'이 '질'로 전환되는 순간",
+                "**Zero-shot 학습**: 예시 없이도 작업 수행 가능 - 마치 처음 보는 게임의 규칙을 설명만 듣고 플레이하는 것과 같음",
+                "**논란의 중심**: '너무 위험해서 공개할 수 없다'는 OpenAI의 초기 입장 (후에 전면 공개)",
+                "**웹텍스트 데이터셋**: 800만 개 웹페이지, 40GB 텍스트로 학습",
+                "**놀라운 일관성**: 수백 단어의 일관된 텍스트 생성 - 이전 모델 대비 획기적 개선"
+            ],
+            "image_prompt": "modern glassmorphism style, gradient background with purple and blue tones, semi-transparent frosted glass elements, subtle blur effects, comparison diagram showing GPT-1 vs GPT-2 scale increase with parameter count visualization, data flow architecture, zero-shot learning concept illustration, professional tech illustration, vibrant neon pink and purple gradient accents, clean minimalist design, soft shadows, depth layers, glowing neural network connections"
+        },
+        {
+            "title": "GPT-3: 거대 언어 모델의 시대",
+            "content": [
+                "**1750억 파라미터**: GPT-2 대비 100배 이상 - 인간 뇌의 시냅스 수(100조)에는 못 미치지만 놀라운 성능",
+                "**Few-shot Learning**: 단 몇 개의 예시만으로 새로운 작업 학습 - 마치 천재가 한 번 보고 따라하는 것처럼",
+                "**In-context Learning**: 프롬프트 내에서 학습 - 모델 가중치 업데이트 없이 적응",
+                "**45TB 텍스트 데이터**: 거의 모든 인터넷 텍스트 학습 (Common Crawl, WebText, Books, Wikipedia)",
+                "**비용**: 학습에 약 460만 달러 (약 50억원) 소요 - 개인이 재현 불가능한 규모"
+            ],
+            "image_prompt": "modern glassmorphism style, gradient background with purple and blue tones, semi-transparent frosted glass elements, subtle blur effects, GPT-3 massive scale visualization with 175B parameters represented as glowing neural network, few-shot learning concept diagram, data sources illustration, professional tech illustration, vibrant neon accents with purple-pink gradient, clean minimalist design, soft shadows, multiple depth layers, cosmic-like neural connections"
+        },
+        {
+            "title": "멀티-헤드 어텐션의 비밀",
+            "content": [
+                "**여러 관점 동시 학습**: 8개 헤드 = 8가지 다른 '시각'으로 문장 분석 - 마치 큐비즘 그림처럼 여러 각도 동시 표현",
+                "**각 헤드의 전문화**: 어떤 헤드는 문법, 어떤 헤드는 의미, 어떤 헤드는 장거리 의존성 학습",
+                "**파라미터 효율성**: 전체 차원을 헤드 수로 나눠 사용 → 계산량 증가 없이 표현력 향상",
+                "**수식**: MultiHead(Q,K,V) = Concat(head_1,...,head_h)W^O",
+                "**실험 결과**: 단일 헤드 대비 BLEU 스코어 1-2점 향상"
+            ],
+            "image_prompt": "modern glassmorphism style, gradient background with purple and blue tones, semi-transparent frosted glass elements, subtle blur effects, multi-head attention mechanism diagram showing 8 parallel attention heads processing input simultaneously, each head with different colored glow (purple, pink, blue spectrum), concatenation and output projection, professional tech illustration, vibrant neon accents, clean minimalist design, soft shadows, depth layers with parallel processing visualization"
+        },
+        {
+            "title": "트랜스포머의 확장: 비전과 멀티모달",
+            "content": [
+                "**Vision Transformer (ViT)**: 이미지를 패치로 나눠 '단어'처럼 처리 - CNN의 아성을 무너뜨림",
+                "**BERT**: 양방향 인코더로 문맥 이해 - '마스크된 단어 맞추기' 게임으로 학습",
+                "**DALL-E & CLIP**: 텍스트와 이미지를 동시에 이해하는 멀티모달 모델",
+                "**AlphaFold2**: 단백질 구조 예측에 트랜스포머 활용 - 생물학 혁명",
+                "**범용성의 증명**: NLP → 비전 → 음성 → 생물학 - 거의 모든 분야에 적용 가능"
+            ],
+            "image_prompt": "modern glassmorphism style, gradient background with purple and blue tones, semi-transparent frosted glass elements, subtle blur effects, transformer applications across domains diagram showing NLP, computer vision (ViT), multimodal (CLIP), protein folding, connected by glowing neural pathways, professional tech illustration, vibrant neon purple-pink-blue gradient accents, clean minimalist design, soft shadows, depth layers, holographic effect"
+        },
+        {
+            "title": "효율성 개선: 어텐션의 진화",
+            "content": [
+                "**Sparse Attention**: 모든 토큰이 아닌 일부만 주목 - O(n²) → O(n√n)으로 복잡도 감소",
+                "**Linear Attention**: 커널 트릭으로 선형 복잡도 달성 - O(n²) → O(n)",
+                "**Flash Attention**: GPU 메모리 계층 최적화로 2-4배 속도 향상 - 하드웨어를 '이해'하는 알고리즘",
+                "**Longformer & BigBird**: 16K 토큰 이상 처리 가능 - 책 한 권을 통째로 입력",
+                "**실용적 영향**: 더 긴 컨텍스트, 더 빠른 학습, 더 적은 메모리 - 모바일 기기에서도 실행 가능"
+            ],
+            "image_prompt": "modern glassmorphism style, gradient background with purple and blue tones, semi-transparent frosted glass elements, subtle blur effects, attention efficiency comparison diagram showing standard attention O(n²) vs sparse attention vs linear attention with complexity graphs, memory optimization visualization, professional tech illustration, vibrant neon accents with gradient from purple to pink, clean minimalist design, soft shadows, depth layers, performance metrics visualization"
+        },
+        {
+            "title": "미래 전망과 도전 과제",
+            "content": [
+                "**ChatGPT & GPT-4**: 대화형 AI의 대중화 - 10억 명 이상 사용자, 역사상 가장 빠른 확산",
+                "**주요 과제들**: ① 환각(Hallucination) 현상 - 그럴듯한 거짓말 생성 ② 계산 비용 - 학습에 수백억원 소요 ③ 해석 가능성 - 왜 그런 답을 했는지 설명 어려움",
+                "**긴 컨텍스트 처리**: 현재 128K 토큰 → 미래 1M 토큰 목표 (책 수십 권 동시 처리)",
+                "**효율적 학습**: LoRA, QLoRA 등으로 개인 PC에서도 파인튜닝 가능",
+                "**AGI를 향한 여정**: 트랜스포머가 인간 수준 AI의 기반이 될 것인가? - 아직 열린 질문"
+            ],
+            "image_prompt": "modern glassmorphism style, gradient background with purple and blue tones, semi-transparent frosted glass elements, subtle blur effects, future AI landscape visualization showing ChatGPT, GPT-4, and beyond with timeline extending to AGI, challenges represented as glowing obstacles (hallucination, cost, interpretability), solutions as pathways, professional tech illustration, vibrant neon purple-pink gradient accents, clean minimalist design, soft shadows, multiple depth layers, futuristic holographic elements"
+        }
+    ]
+}
