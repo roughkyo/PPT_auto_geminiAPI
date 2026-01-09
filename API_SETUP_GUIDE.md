@@ -37,13 +37,6 @@
 2. **"Copy"** 버튼을 클릭하여 클립보드에 복사
 3. ⚠️ **중요**: 이 키는 다시 확인할 수 없으므로 안전한 곳에 보관하세요
 
-### API 키 예시
-
-```
-AIzaSyDaGmWKa4JsXZ-HjGw7ISLn_3namBGewQe
-```
-
----
 
 ## 2. 환경 변수 설정
 
@@ -75,7 +68,7 @@ notepad .env
 메모장이 열리면 다음과 같이 수정:
 
 ```env
-GEMINI_API_KEY=AIzaSyDaGmWKa4JsXZ-HjGw7ISLn_3namBGewQe
+GEMINI_API_KEY=AI~~~
 ```
 
 - `your_api_key_here`를 실제 발급받은 API 키로 교체
@@ -96,7 +89,7 @@ GEMINI_API_KEY=AIzaSyDaGmWKa4JsXZ-HjGw7ISLn_3namBGewQe
 #### PowerShell (현재 세션만)
 
 ```powershell
-$env:GEMINI_API_KEY = "AIzaSyDaGmWKa4JsXZ-HjGw7ISLn_3namBGewQe"
+$env:GEMINI_API_KEY = "AI~~~"
 ```
 
 ---
@@ -249,37 +242,6 @@ dir .env # CMD
 
 ---
 
-## 🔒 보안 주의사항
-
-1. ⚠️ **절대 API 키를 코드에 직접 입력하지 마세요**
-   ```python
-   # ❌ 나쁜 예
-   api_key = "AIzaSyDaGmWKa4JsXZ-HjGw7ISLn_3namBGewQe"
-   
-   # ✅ 좋은 예
-   api_key = os.getenv('GEMINI_API_KEY')
-   ```
-
-2. ⚠️ **`.env` 파일을 Git에 커밋하지 마세요**
-   - `.gitignore`에 `.env`가 포함되어 있는지 확인
-
-3. ⚠️ **API 키를 공개 저장소에 올리지 마세요**
-   - GitHub, GitLab 등에 실수로 업로드하지 않도록 주의
-
-4. ⚠️ **API 키가 노출되었다면 즉시 폐기하세요**
-   - [Google AI Studio](https://makersuite.google.com/app/apikey)에서 키 삭제
-   - 새 키 생성
-
----
-
-## 📚 추가 자료
-
-- [Google Gemini API 공식 문서](https://ai.google.dev/docs)
-- [Python SDK 문서](https://ai.google.dev/api/python/google/generativeai)
-- [API 레퍼런스](https://ai.google.dev/api)
-- [예제 코드](https://github.com/google/generative-ai-python)
-
----
 
 ## ✅ 체크리스트
 
